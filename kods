@@ -1,0 +1,783 @@
+import os
+from tkinter import *
+from turtle import width
+from bs4 import BeautifulSoup
+import webbrowser
+import requests
+import math
+
+### funkcijas
+
+WEBSITE = 'https://wise.com/gb/currency-converter/rub-to-eur-rate'
+
+source = requests.get(WEBSITE).text
+
+soup = BeautifulSoup(source, 'lxml')
+
+rub = soup.find('span', class_='text-success')
+
+r = rub.text
+
+f = float(r)
+b = 0.150*0.065
+n = 0.157*0.069
+da = os.getcwd()
+ua = '\epik.gif'
+ga = da+ua
+
+print(ga)
+
+def click():
+    x = textentry.get()
+    output.delete(0.0,END) 
+    y = float(x)
+
+
+    if textentry1.get() == '0':
+
+           
+        
+        i = y/f
+        i = round(i, 2)
+        k = math.trunc(i/5)
+        q = math.trunc(i/10)
+        w = math.trunc(i/50)
+        e = math.trunc(i/100)
+        r = math.trunc(i/500)
+        t = math.trunc(i/1000)
+        u = math.trunc(i/5000)
+        p = k*0.137*0.061
+        o = q*b 
+        a = w*b
+        s = e*b
+        d = r*b
+        l = r*n
+        g = u*n
+        p = round(p, 3)
+        o = round(o, 3)
+        a = round(a, 3)
+        s = round(s, 3)
+        d = round(d, 3)
+        l = round(l, 3)
+        g = round(g, 3)
+        output.insert(END,'šodien ')
+    elif textentry1.get() == '69':
+        webbrowser.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ')
+        output.insert(END,'⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣶⣿⣿⣿⣿⣿⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n')
+        output.insert(END,'⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿⣿⣿⠿⠟⠛⠻⣿⠆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ \n')
+        output.insert(END,'⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣆⣀⣀⠀⣿⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ \n')
+        output.insert(END,'⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠻⣿⣿⣿⠅⠛⠋⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ \n')
+        output.insert(END,'⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⢼⣿⣿⣿⣃⠠⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n')
+        output.insert(END,'⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣟⡿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n')
+        output.insert(END,'⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣛⣛⣫⡄⠀⢸⣦⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ \n')
+        output.insert(END,'⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣴⣾⡆⠸⣿⣿⣿⡷⠂⠨⣿⣿⣿⣿⣶⣦⣤⣀⠀⠀⠀⠀⠀⠀⠀⠀  \n')
+        output.insert(END,'⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣤⣾⣿⣿⣿⣿⡇⢀⣿⡿⠋⠁⢀⡶⠪⣉⢸⣿⣿⣿⣿⣿⣇⠀⠀⠀⠀⠀⠀ \n')
+        output.insert(END,'⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿⣿⣿⣿⣿⣿⣿⣿⡏⢸⣿⣷⣿⣿⣷⣦⡙⣿⣿⣿⣿⣿⡏⠀⠀⠀⠀⠀⠀ \n')
+        output.insert(END,'⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣿⣿⣿⣿⣿⣿⣿⣿⣇⢸⣿⣿⣿⣿⣿⣷⣦⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀ \n')
+        output.insert(END,'⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ \n')
+        output.insert(END,'⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀ \n')
+        output.insert(END,'⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀ \n')
+        output.insert(END,'⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠀⠀⠀⠀⠀⠀⠀⠀⠀ \n')
+        output.insert(END,'⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀ \n')
+        output.insert(END,'⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⣿⣵⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣯⡁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ \n')
+       
+        
+    
+    else: 
+        lol = textentry1.get()
+        output.delete(0.0,END)
+          
+        jap = lol
+        start = 0
+        stop = 5
+        if len(lol) > stop :
+            lol = lol[0: start:] + lol[stop + 1::]
+        ne = lol
+        web = 'https://www.exchangerates.org.uk/RUB-EUR-spot-exchange-rates-history-'
+
+        ja = '.html'
+        opa = web+ne+ja
+
+
+        WEBSITE = opa
+        source = requests.get(WEBSITE).text
+        soup = BeautifulSoup(source, 'lxml')
+
+#tr
+        tr = soup.find_all('tr',class_='colone')
+        tr1 = soup.find_all('tr',class_='coltwo')
+        for td in tr:
+            to=td.find_all('td')[1]
+            ao=td.find_all('a')
+            for io in to:
+                yo = io.text    
+            for oo in ao:
+                lo = oo.text
+                mo = yo.replace('₽1 RUB = €','')
+                ko = lo.replace('Russian Rouble Euro rate for ','')
+                so = ','
+                uo = mo+so+ko  
+                uo = uo.split(',')
+    
+            for no in uo:
+                if jap in no:
+                    length = len(uo)
+
+                    middle_index = length // 2
+
+                    first_half = uo[:middle_index]
+                    second_half = uo[middle_index:]
+
+                    nauda = first_half
+    #tr1
+        for td1 in tr1:
+            to1=td1.find_all('td')[1]
+            ao1=td1.find_all('a')
+            for io1 in to1:
+                yo1 = io1.text    
+            for oo1 in ao1:
+                lo1 = oo1.text
+                mo1 = yo1.replace('₽1 RUB = €','')
+                ko1 = lo1.replace('Russian Rouble Euro rate for ','')
+                so1 = ','
+                uo1 = mo1+so1+ko1  
+                uo1 = uo1.split(',')
+    
+            for no1 in uo1:
+                if jap in no1:
+                    length = len(uo1)
+
+                    middle_index = length // 2
+
+                    first_half = uo1[:middle_index]
+                    second_half = uo1[middle_index:]
+
+                    nauda = first_half
+         
+        nauda = ' '.join(map(str, nauda))
+        nauda = float(nauda)
+        
+        i = y/nauda
+
+        i = round(i, 2)
+        k = math.trunc(i/5)
+        q = math.trunc(i/10)
+        w = math.trunc(i/50)
+        e = math.trunc(i/100)
+        r = math.trunc(i/500)
+        t = math.trunc(i/1000)
+        u = math.trunc(i/5000)
+        p = round(k*0.120*0.062, 3)
+        o = round(q*0.127*0.067, 3)
+        a = round(w*0.133*0.072, 3)
+        s = round(e*0.140*0.077, 3)
+        d = round(r*0.147*0.082, 3)
+        l = round(t*0.153*0.082, 3)
+        g = round(u*0.160*0.082, 3)
+        output.insert(END,'datums ')
+        output.insert(END, jap)
+        output.insert(END, ' kurss ')
+        output.insert(END,nauda)
+        
+
+    output.insert(END,' tavi rubļi ')
+    output.insert(END,i)
+    output.insert(END,'\n')
+
+    output.insert(END,'5 rubļu banknošu skaits ')
+    output.insert(END,k)
+    output.insert(END,'  ')
+    output.insert(END,'cik m^2 tev būs ')
+    output.insert(END,p)
+    output.insert(END,'\n')
+
+    output.insert(END,'10 rubļu banknošu skaits ')
+    output.insert(END,q)
+    output.insert(END,'  ')
+    output.insert(END,'cik m^2 tev būs ')
+    output.insert(END,o)
+    output.insert(END,'\n')
+
+    output.insert(END,'50 rubļu banknošu skaits ')
+    output.insert(END,w)
+    output.insert(END,'  ')
+    output.insert(END,'cik m^2 tev būs ')
+    output.insert(END,a)
+    output.insert(END,'\n')
+
+    output.insert(END,'100 rubļu banknošu skaits ')
+    output.insert(END,e)
+    output.insert(END,'  ')
+    output.insert(END,'cik m^2 tev būs ')
+    output.insert(END,s)
+    output.insert(END,'\n')
+
+    output.insert(END,'500 rubļu banknošu skaits ')
+    output.insert(END,r)
+    output.insert(END,'  ')
+    output.insert(END,'cik m^2 tev būs ')
+    output.insert(END,d)
+    output.insert(END,'\n')
+
+    output.insert(END,'1000 rubļu banknošu skaits ')
+    output.insert(END,t)
+    output.insert(END,'  ')
+    output.insert(END,'cik m^2 tev būs ')
+    output.insert(END,l)
+    output.insert(END,'\n')
+
+    output.insert(END,'5000 rubļu banknošu skaits   ')
+    output.insert(END,u)
+    output.insert(END,'  ')
+    output.insert(END,'cik m^2 tev būs ')
+    output.insert(END,g)
+    output.insert(END,'\n')
+
+def clic():
+    x = textentry.get()
+    output.delete(0.0,END) 
+    y = float(x)
+
+    if textentry1.get() == '0':
+        output.delete(0.0,END)
+    
+
+        p = round((y/(0.137*0.061)),2)
+        o = round((y/b), 2) 
+        a = round((y/b), 2)
+        s = round((y/b), 2)
+        d = round((y/b), 2)
+        l = round((y/n), 2)
+        g = round((y/n), 2)
+
+        k = round((p*5*f),2)
+        q = round((o*10*f),2)
+        w = round((a*50*f),2)
+        e = round((s*100*f),2)
+        r = round((d*500*f),2)
+        t = round((l*1000*f),2)
+        u = round((g*5000*f),2)
+        output.insert(END,'šodien ') 
+   #1
+ 
+    else:
+        lol = textentry1.get()
+        output.delete(0.0,END)
+          
+        jap = lol
+        start = 0
+        stop = 5
+        if len(lol) > stop :
+            lol = lol[0: start:] + lol[stop + 1::]
+        ne = lol
+        web = 'https://www.exchangerates.org.uk/RUB-EUR-spot-exchange-rates-history-'
+
+        ja = '.html'
+        opa = web+ne+ja
+
+
+        WEBSITE = opa
+        source = requests.get(WEBSITE).text
+        soup = BeautifulSoup(source, 'lxml')
+
+#tr
+        tr = soup.find_all('tr',class_='colone')
+        tr1 = soup.find_all('tr',class_='coltwo')
+        for td in tr:
+            to=td.find_all('td')[1]
+            ao=td.find_all('a')
+            for io in to:
+                yo = io.text    
+            for oo in ao:
+                lo = oo.text
+                mo = yo.replace('₽1 RUB = €','')
+                ko = lo.replace('Russian Rouble Euro rate for ','')
+                so = ','
+                uo = mo+so+ko  
+                uo = uo.split(',')
+    
+            for no in uo:
+                if jap in no:
+                    length = len(uo)
+
+                    middle_index = length // 2
+
+                    first_half = uo[:middle_index]
+                    
+
+                    nauda = first_half
+    #tr1
+        for td1 in tr1:
+            to1=td1.find_all('td')[1]
+            ao1=td1.find_all('a')
+            for io1 in to1:
+                yo1 = io1.text    
+            for oo1 in ao1:
+                lo1 = oo1.text
+                mo1 = yo1.replace('₽1 RUB = €','')
+                ko1 = lo1.replace('Russian Rouble Euro rate for ','')
+                so1 = ','
+                uo1 = mo1+so1+ko1  
+                uo1 = uo1.split(',')
+    
+            for no1 in uo1:
+                if jap in no1:
+                    length = len(uo1)
+
+                    middle_index = length // 2
+
+                    first_half = uo1[:middle_index]
+                    
+
+                    nauda = first_half
+         
+        nauda = ' '.join(map(str, nauda))
+        nauda = float(nauda)
+
+        p = round((y/(0.137*0.061)),2)
+        o = round((y/b), 2) 
+        a= round((y/b), 2)
+        s = round((y/b), 2)
+        d = round((y/b), 2)
+        l = round((y/n), 2)
+        g = round((y/n), 2)
+
+        k = round((p*5*nauda),2)
+        q = round((o*10*nauda),2)
+        w = round((a*50*nauda),2)
+        e = round((s*100*nauda),2)
+        r = round((d*500*nauda),2)
+        t = round((l*1000*nauda),2)
+        u = round((g*5000*nauda),2)
+
+    output.insert(END,'5 rubļu banknošu skaits ')      
+    output.insert(END,p)
+    output.insert(END,'  ')
+    output.insert(END,'eiro skaits  ')
+    output.insert(END,k) 
+    output.insert(END,'\n')
+        #2
+    output.insert(END,'10 rubļu banknošu skaits ')
+    output.insert(END,o)
+    output.insert(END,'  ')
+    output.insert(END,'eiro skaits  ')
+    output.insert(END,q)
+    output.insert(END,'\n')
+        #3
+    output.insert(END,'50 rubļu banknošu skaits  ')
+    output.insert(END,a)
+    output.insert(END,'  ')
+    output.insert(END,'eiro skaits  ')
+    output.insert(END,w)
+    output.insert(END,'\n')
+        #4
+    output.insert(END,'100 rubļu banknošu skaits  ')
+    output.insert(END,s)
+    output.insert(END,'  ')
+    output.insert(END,'eiro skaits  ')
+    output.insert(END,e)
+    output.insert(END,'\n')
+        #5
+    output.insert(END,'500 rubļu banknošu skaits  ')
+    output.insert(END,d)
+    output.insert(END,'  ')
+    output.insert(END,'eiro skaits  ')
+    output.insert(END,r)
+    output.insert(END,'\n')
+        #6
+    output.insert(END,'1000 rubļu banknošu skaits  ')
+    output.insert(END,l)
+    output.insert(END,'  ')
+    output.insert(END,'eiro skaits  ')
+    output.insert(END,t)
+    output.insert(END,'\n')
+        #7
+    output.insert(END,'5000 rubļu banknošu skaits  ')
+    output.insert(END,g)
+    output.insert(END,'  ')
+    output.insert(END,'eiro skaits  ')
+    output.insert(END,u)
+    output.insert(END,'\n')
+    output.insert(END,'jā tev būs jāgriež nauda')     
+
+def cli():
+    x = textentry.get()
+    output.delete(0.0,END)
+    
+   
+    y= float(x)
+    if textentry1.get() == '0':
+        output.delete(0.0,END)
+
+
+        i = y*f
+
+        i = round(i, 2)
+        k = math.trunc(i/5)
+        q = math.trunc(i/10)
+        w = math.trunc(i/20)
+        e = math.trunc(i/50)
+        r = math.trunc(i/100)
+        t = math.trunc(i/200)
+        u = math.trunc(i/500)
+        
+        p = round(k*0.120*0.062, 3)
+        o = round(q*0.127*0.067, 3)
+        a = round(w*0.133*0.072, 3)
+        s = round(e*0.140*0.077, 3)
+        d = round(r*0.147*0.082, 3)
+        l = round(t*0.153*0.082, 3)
+        g = round(u*0.160*0.082, 3)    
+
+        output.insert(END,'tavi euro šodien ')
+        output.insert(END,i)
+
+    else: 
+        lol = textentry1.get()
+        output.delete(0.0,END)
+          
+        jap = lol
+        start = 0
+        stop = 5
+        if len(lol) > stop :
+            lol = lol[0: start:] + lol[stop + 1::]
+        ne = lol
+        web = 'https://www.exchangerates.org.uk/RUB-EUR-spot-exchange-rates-history-'
+
+        ja = '.html'
+        opa = web+ne+ja
+
+
+        WEBSITE = opa
+        source = requests.get(WEBSITE).text
+        soup = BeautifulSoup(source, 'lxml')
+
+#tr
+        tr = soup.find_all('tr',class_='colone')
+        tr1 = soup.find_all('tr',class_='coltwo')
+        for td in tr:
+            to=td.find_all('td')[1]
+            ao=td.find_all('a')
+            for io in to:
+                yo = io.text    
+            for oo in ao:
+                lo = oo.text
+                mo = yo.replace('₽1 RUB = €','')
+                ko = lo.replace('Russian Rouble Euro rate for ','')
+                so = ','
+                uo = mo+so+ko  
+                uo = uo.split(',')
+    
+            for no in uo:
+                if jap in no:
+                    length = len(uo)
+
+                    middle_index = length // 2
+
+                    first_half = uo[:middle_index]
+                    second_half = uo[middle_index:]
+
+                    nauda = first_half
+    #tr1
+        for td1 in tr1:
+            to1=td1.find_all('td')[1]
+            ao1=td1.find_all('a')
+            for io1 in to1:
+                yo1 = io1.text    
+            for oo1 in ao1:
+                lo1 = oo1.text
+                mo1 = yo1.replace('₽1 RUB = €','')
+                ko1 = lo1.replace('Russian Rouble Euro rate for ','')
+                so1 = ','
+                uo1 = mo1+so1+ko1  
+                uo1 = uo1.split(',')
+    
+            for no1 in uo1:
+                if jap in no1:
+                    length = len(uo1)
+
+                    middle_index = length // 2
+
+                    first_half = uo1[:middle_index]
+                    second_half = uo1[middle_index:]
+
+                    nauda = first_half
+         
+        nauda = ' '.join(map(str, nauda))
+        nauda = float(nauda)
+        
+        i = y*nauda
+
+        i = round(i, 2)
+        k = math.trunc(i/5)
+        q = math.trunc(i/10)
+        w = math.trunc(i/20)
+        e = math.trunc(i/50)
+        r = math.trunc(i/100)
+        t = math.trunc(i/200)
+        u = math.trunc(i/500)
+        
+        p = round(k*0.120*0.062, 3)
+        o = round(q*0.127*0.067, 3)
+        a = round(w*0.133*0.072, 3)
+        s = round(e*0.140*0.077, 3)
+        d = round(r*0.147*0.082, 3)
+        l = round(t*0.153*0.082, 3)
+        g = round(u*0.160*0.082, 3)
+
+    output.insert(END,' tavi rubļi ')
+    output.insert(END,i)
+    output.insert(END,'\n')
+
+    output.insert(END,'5 rubļu banknošu skaits ')
+    output.insert(END,k)
+    output.insert(END,'  ')
+    output.insert(END,'cik m^2 tev būs ')
+    output.insert(END,p)
+    output.insert(END,'\n')
+
+    output.insert(END,'10 rubļu banknošu skaits ')
+    output.insert(END,q)
+    output.insert(END,'  ')
+    output.insert(END,'cik m^2 tev būs ')
+    output.insert(END,o)
+    output.insert(END,'\n')
+
+    output.insert(END,'50 rubļu banknošu skaits ')
+    output.insert(END,w)
+    output.insert(END,'  ')
+    output.insert(END,'cik m^2 tev būs ')
+    output.insert(END,a)
+    output.insert(END,'\n')
+
+    output.insert(END,'100 rubļu banknošu skaits ')
+    output.insert(END,e)
+    output.insert(END,'  ')
+    output.insert(END,'cik m^2 tev būs ')
+    output.insert(END,s)
+    output.insert(END,'\n')
+
+    output.insert(END,'500 rubļu banknošu skaits ')
+    output.insert(END,r)
+    output.insert(END,'  ')
+    output.insert(END,'cik m^2 tev būs ')
+    output.insert(END,d)
+    output.insert(END,'\n')
+
+    output.insert(END,'1000 rubļu banknošu skaits ')
+    output.insert(END,t)
+    output.insert(END,'  ')
+    output.insert(END,'cik m^2 tev būs ')
+    output.insert(END,l)
+    output.insert(END,'\n')
+
+    output.insert(END,'5000 rubļu banknošu skaits   ')
+    output.insert(END,u)
+    output.insert(END,'  ')
+    output.insert(END,'cik m^2 tev būs ')
+    output.insert(END,g)
+    output.insert(END,'\n')
+    
+def cl():
+    x = textentry.get()
+    output.delete(0.0,END)
+  
+    y= float(x)
+    if textentry1.get() == '0':
+
+        p = round((y/(0.120*0.062)),2)
+        o = round((y/(0.127*0.067)), 2) 
+        a = round((y/(0.133*0.072)), 2)
+        s = round((y/(0.140*0.077)), 2)
+        d = round((y/(0.147*0.082)), 2)
+        l = round((y/(0.153*0.082)), 2)
+        g = round((y/(0.160*0.082)), 2)
+
+        k = round((p*5/f),2)
+        q = round((o*10/f),2)
+        w = round((a*20/f),2)
+        e = round((s*50/f),2)
+        r = round((d*100/f),2)
+        t = round((l*200/f),2)
+        u = round((g*500/f),2)
+        
+    #1
+
+    
+    else:
+        lol = textentry1.get()
+        output.delete(0.0,END)
+          
+        jap = lol
+        start = 0
+        stop = 5
+        if len(lol) > stop :
+            lol = lol[0: start:] + lol[stop + 1::]
+        ne = lol
+        web = 'https://www.exchangerates.org.uk/RUB-EUR-spot-exchange-rates-history-'
+
+        ja = '.html'
+        opa = web+ne+ja
+
+
+        WEBSITE = opa
+        source = requests.get(WEBSITE).text
+        soup = BeautifulSoup(source, 'lxml')
+
+#tr
+        tr = soup.find_all('tr',class_='colone')
+        tr1 = soup.find_all('tr',class_='coltwo')
+        for td in tr:
+            to=td.find_all('td')[1]
+            ao=td.find_all('a')
+            for io in to:
+                yo = io.text    
+            for oo in ao:
+                lo = oo.text
+                mo = yo.replace('₽1 RUB = €','')
+                ko = lo.replace('Russian Rouble Euro rate for ','')
+                so = ','
+                uo = mo+so+ko  
+                uo = uo.split(',')
+    
+            for no in uo:
+                if jap in no:
+                    length = len(uo)
+
+                    middle_index = length // 2
+
+                    first_half = uo[:middle_index]
+                    
+
+                    nauda = first_half
+    #tr1
+        for td1 in tr1:
+            to1=td1.find_all('td')[1]
+            ao1=td1.find_all('a')
+            for io1 in to1:
+                yo1 = io1.text    
+            for oo1 in ao1:
+                lo1 = oo1.text
+                mo1 = yo1.replace('₽1 RUB = €','')
+                ko1 = lo1.replace('Russian Rouble Euro rate for ','')
+                so1 = ','
+                uo1 = mo1+so1+ko1  
+                uo1 = uo1.split(',')
+    
+            for no1 in uo1:
+                if jap in no1:
+                    length = len(uo1)
+
+                    middle_index = length // 2
+
+                    first_half = uo1[:middle_index]
+                    
+
+                    nauda = first_half
+         
+        nauda = ' '.join(map(str, nauda))
+        nauda = float(nauda)
+        
+        
+
+        p = round((y/(0.120*0.062)),2)
+        o = round((y/(0.127*0.067)), 2) 
+        a = round((y/(0.133*0.072)), 2)
+        s= round((y/(0.140*0.077)), 2)
+        d = round((y/(0.147*0.082)), 2)
+        l = round((y/(0.153*0.082)), 2)
+        g = round((y/(0.160*0.082)), 2)
+
+        k = round((p*5/nauda),2)
+        q = round((o*10/nauda),2)
+        w = round((a*20/nauda),2)
+        e = round((s*50/nauda),2)
+        r = round((d*100/nauda),2)
+        t = round((l*200/nauda),2)
+        u = round((g*500/nauda),2)
+
+    output.insert(END,'5 eur banknošu skaits  ')
+    output.insert(END,p)
+    output.insert(END,'  ')
+    output.insert(END,'rubļu skaits')
+    output.insert(END,k) 
+    output.insert(END,'\n')
+        #2
+    output.insert(END,'10 eur banknošu skaits ')
+    output.insert(END,o)
+    output.insert(END,'  ')
+    output.insert(END,'rubļu skaits  ')
+    output.insert(END,q)
+    output.insert(END,'\n')
+        #3
+    output.insert(END,'20 eur banknošu skaits  ')
+    output.insert(END,a)
+    output.insert(END,'  ')
+    output.insert(END,'rubļu skaits  ')
+    output.insert(END,w)
+    output.insert(END,'\n')
+        #4
+    output.insert(END,'50 eur banknošu skaits  ')
+    output.insert(END,s)
+    output.insert(END,'  ')
+    output.insert(END,'rubļu skaits  ')
+    output.insert(END,e)
+    output.insert(END,'\n')
+        #5
+    output.insert(END,'100 eur banknošu skaits  ')
+    output.insert(END,d)
+    output.insert(END,'  ')
+    output.insert(END,'rubļu skaits  ')
+    output.insert(END,r)
+    output.insert(END,'\n')
+        #6
+    output.insert(END,'200 eur banknošu skaits  ')
+    output.insert(END,l)
+    output.insert(END,'  ')
+    output.insert(END,'rubļu skaits  ')
+    output.insert(END,t)
+    output.insert(END,'\n')
+        #7
+    output.insert(END,'500 eur banknošu skaits  ')
+    output.insert(END,g)
+    output.insert(END,'  ')
+    output.insert(END,'rubļu skaits  ')
+    output.insert(END,u)
+    output.insert(END,'\n')
+    output.insert(END,'jā tev būs jāgriež nauda')
+###galvenais
+window = Tk()
+window.title('bistami.exe')
+window.configure(background ='black')
+## bilde
+#photo = PhotoImage(file = ga)
+#Label (window, image=photo, bg = 'white').grid(row = 0 , column = 0, sticky = W)
+## label
+Label (window, text = 'pašreizējais rubļa  kurss', bg= 'black', fg = 'white', font = 'font.ttf',).grid(row = 1, column= 0, sticky=W)
+Label (window, text = 'ievadi datumu formātā DD/MM/GGGG,', bg= 'black', fg = 'white', font = 'font.ttf',).grid(row = 1, column= 1, sticky=W)
+
+Label (window, text = 'ja vēlies šodienas datumu ievadi 0', bg= 'black', fg = 'white', font = 'font.ttf',).grid(row = 2, column= 1, sticky=W)
+Label (window, text = 'mazākais datums ir 01/01/2010', bg= 'black', fg = 'white', font = 'font.ttf',).grid(row = 3, column= 1, sticky=W)
+Label (window, text = f, bg= 'black', fg = 'white', font = 'font.ttf',).grid(row = 2, column= 0, sticky=W)
+Label (window, text = 'ievadi skaitli ieteicams ne lielāku par 1000000', bg= 'black', fg = 'white', font = 'font.ttf',).grid(row = 3, column= 0, sticky=W)
+##textbox
+textentry = Entry(window, width = 20, bg = 'white')
+textentry.grid(row = 4, column = 0, sticky = W )
+textentry1 = Entry(window, width = 20, bg = 'white')
+textentry1.grid(row = 4, column = 1, sticky = W )
+
+## pogas
+Button (window, text = 'rubļu tapetes' ,width= 17, command = click).grid(row = 8, column = 0 , sticky= W)
+Button (window, text = 'ievadi m^2 un nospied' ,width= 17, command = clic).grid(row = 10, column = 0 , sticky= W)
+Button (window, text = 'euro tapetes' ,width= 17, command = cli).grid(row = 8, column = 1 , sticky= W)
+Button (window, text = 'ievadi m^2 un nospied' ,width= 17, command = cl).grid(row = 10, column = 1 , sticky= W)
+## velviens label
+Label (window, text = 'rezultāts', bg= 'black', fg = 'white', font = 'font.ttf',).grid(row = 20, column= 0, sticky=W)
+#velviens textbox
+output = Text(window, width=100, height = 10, wrap = WORD, background = 'white')
+output.grid(row = 50, column = 0, columnspan = 2, sticky=W)
+window.mainloop()
+
+
+    
+
